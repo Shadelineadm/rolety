@@ -1,0 +1,62 @@
+{% extends "main/base.html" %}
+{% block content%}
+{% load static %}
+<section class="home4 small calc">
+    <div class="content calc">
+        <p class="heading_calc">Вкажіть розміри та тип вікон:</p>
+        <form id="form4" class="form4" method="post">
+            {% csrf_token %}
+            <div class="price">
+                <div class="price_col first">
+                    <div class="param">
+                        <p class="p_name">Ширина(см):</p>
+                        <div class="p_value">
+                            <input type="number" name="width" class="p_input">
+                        </div>
+                    </div>
+                    <div class="param">
+                        <p class="p_name">Тип вікна:</p>
+                        <div class="p_values">
+                            <select name="w_type" class="p_select">
+                                {% for type in types %}
+                                <option value="{{type.id}}">{{type.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="price_col">
+                    <div class="param">
+                        <p class="p_name">Висота(см):</p>
+                        <div class="p_value">
+                            <input type="number" name="height" class="p_input">
+                        </div>
+                    </div>
+                    <div class="param">
+                        <p class="p_name">Колір:</p>
+                        <div class="p_values scnd">
+                            <select name="w_colour" class="p_select">
+                                {% for colour in colours %}
+                                <option value="{{colour.id}}">{{colour.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button form="form4" type="submit" class="price_button">
+                Розрахувати
+        </button>
+        <p class="price_name">Ціна</p>
+        <div class="p_value price">
+            <p class="price_name">{{price}}грн</p>
+        </div>
+        <a href="#header_content">
+        <button class="call_button">
+            Подзвонити і замовити
+        </button>
+        </a>
+    </div>
+</section>
+{% endblock %}

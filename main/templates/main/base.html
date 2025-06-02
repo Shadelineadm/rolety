@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Shadeline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/main/css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="content header" id="header_content">
+        <div class="header">
+            <div class="header1">
+                <img id=main_icon class="main_icon" src="{% static '/main/img/window.png'%}">
+                <p class="wname">Shadeline</p>
+                <ul class="nav">
+                    <li class="nav_el">
+                        <a href="{% url 'home'%}">
+                        {% if request.path == "/main/home/"%}
+                        <p class="current_page">Головна</p>
+                        {%else%}
+                        <p>Головна</p>
+                        {%endif%}
+                        </a>
+                    </li>
+                    <li class="nav_el">
+                        <a href="{% url 'catalog'%}">
+                        {% if request.path == "/main/catalog/"%}
+                        <p class="current_page">Каталог</p>
+                        {%else%}
+                        <p>Каталог</p>
+                        {%endif%}
+                        </a>
+                    </li>
+                    <li class="nav_el">
+                        <a href="{% url 'workers'%}">
+                        {% if request.path == "/main/workers/"%}
+                        <p class="current_page">Наша команда</p>
+                        {%else%}
+                        <p>Наша команда</p>
+                        {%endif%}
+                        </a>
+                    </li>
+                    <li class="nav_el">
+                        <a href="{% url 'calculator'%}">
+                        {% if request.path == "/main/calculator/"%}
+                        <p class="current_page">Калькулятор цін</p>
+                        {%else%}
+                        <p>Калькулятор цін</p>
+                        {%endif%}
+                        </a>
+                    </li>
+                </ul>
+                <button class="menu_open">
+                    <img class="hamburger" src="{% static '/main/img/menu.png'%}">
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="headc" class="header2">
+    <p class="header2_1">Для замовлення телефонуйте:</p>
+    <ul class="header2_2">
+        <li class="contacts_el">
+            <p class="contacts_el1">Наші контакти:</p>
+        </li>
+        <li class="contacts_el">
+            <p class="contacts_el1">0665047525</p>
+        </li>
+        <li class="contacts_el">
+            <p class="contacts_el1">0977522799</p>
+        </li>
+    </ul>
+</section>
+{% block content %}
+{% endblock %}
+<footer>
+    <div class="content home footer">
+        <div class="footer1">
+            <p class="footerH one">Наші контакти:</p>
+            <p class="footerL">gora.melnik@gmail.com</p>
+            <p class="footerL">0665047525</p>
+        </div>
+        <div class="footer1">
+            <p class="footerH">Адреси магазинів:</p>
+            <p class="footerL">вул. Шевченка 15</p>
+            <p class="footerL">вул. Грушевського 23</p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+let elementsArray = document.querySelectorAll("section");
+console.log(elementsArray);
+window.addEventListener('scroll', fadeIn ); 
+function fadeIn() {
+    for (var i = 0; i < elementsArray.length; i++) {
+        var elem = elementsArray[i]
+        var distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
+        if (distInView < 0) {
+            elem.classList.add("inView");
+        } else {
+            elem.classList.remove("inView");
+        }
+    }
+}
+fadeIn();
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="{% static 'main/js/base.js'%}"></script>
+</body>
+</html>

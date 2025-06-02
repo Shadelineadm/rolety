@@ -1,0 +1,217 @@
+{% extends "main/base.html" %}
+{% block content%}
+{% load static %}
+<section class="home4 cat">
+    <div class="content cat">
+        <p class="heading_calc">Оберіть товар:</p>
+        <form id="form1" class="search_c calc" action="{% url 'catalog'%}" method="get">
+            <p class="cat_heading">Категорії:</p>
+            <div class="cat">
+                <div class="category">
+                    {% if nets == 'nets' %}
+                    <input type="checkbox" onclick="submitf()" form="form1" class="cross_img" id="nets" name="nets" value="nets" checked>
+                    {% else %}
+                    <input type="checkbox" onclick="submitf()" form="form1" class="cross_img" id="nets" name="nets" value="nets">
+                    {% endif %}
+                    <p class="cat_text">Москітні сітки</p>
+                </div>
+                <div class="category">
+                    {% if rolets == 'rolets' %}
+                    <input type="checkbox" onclick="submitf()" form="form1" class="cross_img" id="rolets" name="rolets" value="rolets" checked>
+                    {% else %}
+                    <input type="checkbox" onclick="submitf()" form="form1" class="cross_img" id="rolets" name="rolets" value="rolets">
+                    {% endif %}
+                    <p class="cat_text" id="rolet_t">Ролети</p>
+                </div>
+            </div>
+            <div class="search">
+                <button type="submit" form="form1" class="empty_button">
+                    <img class="search_img" src="{% static 'main/img/glass.png'%}">
+                </button>
+                <input id="search_text" name="search_text" form="form1" type="text" class="search_input" placeholder="пошук ...">
+            </div>
+        </form>
+        <div class="grid first">
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"0:5" %}
+                <a href="{{ obj.get_absolute_url}}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"5:10" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="grid second">
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"0:3" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"3:6" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"6:9" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"9:" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="grid third">
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"0:2" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"2:4" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"4:6" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"6:8" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="row">
+                {% for obj in page_obj.object_list|slice:"8:" %}
+                <a href="{{ obj.get_absolute_url }}price/">
+                <div class="card">
+                    <img class="net_img" src="{{ obj.image.url }}">
+                    <p class="name_text">{{ obj.name }}</p>
+                    {% if obj.c_name == 'net'%}
+                    <p class="price_text">{{ obj.price_m }} грн/кв.м.</p>
+                    {% endif %}
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pagination cat">
+            {% if page_obj.has_previous %}
+            <a href="?nets={{nets}}&rolets={{rolets}}&search_text={{search_text}}&page={{ page_obj.previous_page_number }}">
+                <div class="p_item" style="background-image: url({% static 'main/img/arrowl.png'%});">
+                </div>
+            </a>
+            <a href="?nets={{nets}}&rolets={{rolets}}&search_text={{search_text}}&page={{ page_obj.previous_page_number }}">
+                <div class="p_item" style="background-image: url({% static 'main/img/pagin1.png'%});">
+                    {{ page_obj.previous_page_number }}
+                </div>
+            </a>
+            {% endif %}
+            <div class="p_item current" style="background-image: url({% static 'main/img/pagin2.png'%});">
+                {{ page_obj.number }}
+            </div>
+            {% if page_obj.has_next %}
+            <a href="?nets={{nets}}&rolets={{rolets}}&search_text={{search_text}}&page={{ page_obj.next_page_number }}">
+                <div class="p_item" style="background-image: url({% static 'main/img/pagin1.png'%});">
+                    {{ page_obj.next_page_number }}
+                </div>
+            </a>
+            <a href="?nets={{nets}}&rolets={{rolets}}&search_text={{search_text}}&page={{ page_obj.next_page_number }}">
+                <div class="p_item last" style="background-image: url({% static 'main/img/arrowr.png'%});">
+                </div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        function submitf() {
+            document.forms['form1'].submit();
+        }
+    </script>
+</section>
+{% endblock %}

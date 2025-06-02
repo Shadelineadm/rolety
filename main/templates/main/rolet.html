@@ -1,0 +1,65 @@
+{% extends "main/base.html" %}
+{% block content%}
+{% load static %}
+<section class="home4 r">
+    <div class="content obj">
+        <div class="obj_wrapper">
+            <div class="obj_img_wrapper rolet">
+            <img class="obj_img rolet" src="{{rolet.image.url}}">
+            </div>
+            <div class="about_obj rolet">
+                <p class="obj_title">{{rolet.name}}</p>
+                <p class="obj_price">Ціна встановлення: {{rolet.price}} грн</p>
+                <p class="obj_description">{{rolet.description}}</p>
+            </div>
+            <div class="rol_fab">
+                <p class="rol_fab_title">Доступні тканини:</p>
+                <div class="car_wrapper">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            {% with rolet.fabric.all as imageset %}
+                        <ol class="carousel-indicators">
+                            {% with imageset|first as fimg %}
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            {% endwith %}
+                            {% for image in imageset|slice:"1:" %} 
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter}}"></li>
+                            {% endfor %}
+                        </ol>
+                        <div class="carousel-inner">
+                            {% with imageset|first as fimg %}
+                            <div class="carousel-item active">
+                                <a href="{% url 'fabric' fimg.id %}">
+                                <img class="d-block w-100 rol" src="{{fimg.image.url}}" alt="First slide">
+                                <div class="carousel-caption d-md-block">
+                                    <p class="rol_fab_name">{{fimg.name}}</p>
+                                </div>
+                                </a>
+                            </div>
+                            {% endwith %} 
+                            {% for image in imageset|slice:"1:" %}
+                            <div class="carousel-item">
+                                <a href="{% url 'fabric' image.id %}">
+                                <img class="d-block w-100 rol" src="{{image.image.url}}" alt="First slide">
+                                <div class="carousel-caption d-md-block">
+                                    <p class="rol_fab_name">{{image.name}}</p>
+                                </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                            {% endwith %} 
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

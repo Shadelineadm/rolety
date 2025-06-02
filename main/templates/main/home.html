@@ -1,0 +1,132 @@
+{% extends "main/base.html" %}
+{% block content%}
+{% load static %}
+<section class="home" style= "background-image: url({%static 'main/img/skyscrapers2.jpg' %}); " id="home1">
+    <div class="content home offer first" >
+        <div class="offer one">
+            <p class="offer_heading">Кращі ролети та москітні сітки y Києві</p>
+            <a href="{% url 'catalog'%}">
+                <button class="offer_button">
+                    <p class="offer_text">Каталог</p>
+                </button>
+            </a>
+        </div>
+        <img class="offer_image" src="{%static 'main/img/rolet1.png'%}">
+    </div>
+</section>
+<section class="inView" style= "background-image: url({%static 'main/img/net.jpg' %}); " id="home2">
+    <div class="content home offer nets" >
+        <img class="offer_image" src="{%static 'main/img/net.png'%}">
+        <div class="offer two">
+            <p class="offer_heading">Москітні сітки</p>
+            <p class="offer_text t">Найбільш ефективний та безпечний для здоров’я спосіб захисту приміщення від комах у літній сезон</p>
+            <a href="{% url 'catalog'%}">
+                <button class="offer_button">
+                    <p class="offer_text">Каталог</p>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+<section style= "background-image: url({%static 'main/img/flat.jpg' %}); " id="home3">
+    <div class="content home offer rolets" >
+        <div class="offer three">
+            <p class="offer_heading">Ролети</p>
+            <p class="offer_text t">Зручний вибір для захисту від
+                                    сонця. Кращі ролети на вікна
+                                    будь-яких розмірів
+            </p>
+            <a href="{% url 'catalog'%}">
+                <button class="offer_button">
+                    <p class="offer_text">Каталог</p>
+                </button>
+            </a>
+        </div>
+        <img class="offer_image third" src="{%static 'main/img/rolet.png'%}">
+    </div>
+</section>
+<section class="home4 s">
+    <div class="content home col" >
+        <p class="heading">Чому саме ми?</p>
+        <div class="benefits">
+            <div class="columnb">
+                <div class="b_item one">
+                    <img class="b_image one" src="{%static 'main/img/shield.png'%}" style="width: 88px; height: 88px;">
+                    <div class="item_cont first">
+                        <p class="item_heading">Надійність</p>
+                        <p class="item_text">Ми використовуємо найкращі матеріали від європейських та вітчизняних виробників</p>
+                    </div>
+                </div>
+                <div class="b_item">
+                    <img class="b_image two" src="{%static 'main/img/window2.png'%}" style="width: 92px; height: 92px;">
+                    <div class="item_cont second">
+                        <p class="item_heading">Універсальність</p>
+                        <p class="item_text">Наш каталог дає можливість обрати товари під вікна будь-яких розмірів.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnb">
+                <div class="b_item two">
+                    <img class="b_image three" src="{%static 'main/img/high-quality.png'%}" style="width: 95px; height: 95px;">
+                    <div class="item_cont third">
+                        <p class="item_heading">Якість</p>
+                        <p class="item_text">У нашій команді працюють проффесіонали з великим досвідом складних замовлень.</p>
+                    </div>
+                </div>
+                <div class="b_item">
+                    <img class="b_image four" src="{%static 'main/img/timer.png'%}" style="width: 92px; height: 92px;">
+                    <div class="item_cont fourth">
+                        <p class="item_heading">Швидкість</p>
+                        <p class="item_text">Швидка обробка замовлень забезпечує своечасне та якісне встановлення обраних вами товарів.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="home5">
+    <div class="content home col col5" >
+        <p class="heading">Чому саме ми?</p>
+        <div class="benefits">
+            <div class="columnb">
+                <div class="b_item one">
+                    <img class="b_image one" src="{%static 'main/img/shield.png'%}" style="width: 88px; height: 88px;">
+                    <div class="item_cont first">
+                        <p class="item_heading">Надійність</p>
+                        <p class="item_text">Ми використовуємо найкращі матеріали від європейських та вітчизняних виробників</p>
+                    </div>
+                </div>
+                <div class="b_item">
+                    <img class="b_image two" src="{%static 'main/img/window2.png'%}" style="width: 92px; height: 92px;">
+                    <div class="item_cont second">
+                        <p class="item_heading">Універсальність</p>
+                        <p class="item_text">Наш каталог дає можливість обрати товари під вікна будь-яких розмірів.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="home6">
+    <div class="content home col col6" >
+        <div class="benefits">
+            <div class="columnb">
+                <div class="b_item two">
+                    <img class="b_image three" src="{%static 'main/img/high-quality.png'%}" style="width: 95px; height: 95px;">
+                    <div class="item_cont third">
+                        <p class="item_heading">Якість</p>
+                        <p class="item_text">У нашій команді працюють проффесіонали з великим досвідом складних замовлень.</p>
+                    </div>
+                </div>
+                <div class="b_item">
+                    <img class="b_image four" src="{%static 'main/img/timer.png'%}" style="width: 92px; height: 92px;">
+                    <div class="item_cont fourth">
+                        <p class="item_heading">Швидкість</p>
+                        <p class="item_text">Швидка обробка замовлень забезпечує своечасне та якісне встановлення обраних вами товарів.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

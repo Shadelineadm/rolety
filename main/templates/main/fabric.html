@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% block content%}
+{% load static %}
+<section class="home4">
+    <div class="content obj">
+        <div class="obj_wrapper">
+            <div class="obj_img_wrapper net">
+            <img class="obj_img net" src="{{fabric.image.url}}">
+            </div>
+            <div class="about_obj">
+                <p class="obj_title">{{fabric.name}}</p>
+                <p class="obj_price_m">{{fabric.price_m}} грн/кв.м.</p>
+                <p class="obj_description">{{fabric.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
